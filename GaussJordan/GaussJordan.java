@@ -1,14 +1,9 @@
 package GaussJordan;
-
 import java.util.Scanner;
-
 public class GaussJordan {
 
-	//static double[][] A = new double[3][4];
-	static double[][] A = {{5,2,0,2},{2,1,-1,0},{2,3,-1,3}};
-	
+	static double[][] A = new double[3][4];
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 		introDatos();
 		mostrarDatos();
 		dividir();
@@ -16,8 +11,7 @@ public class GaussJordan {
 	}
 	
 	public static void introDatos(){
-		/*Scanner teclado = new Scanner(System.in);
-		
+		Scanner teclado = new Scanner(System.in);
 		for (int x = 0; x < A.length; x++) {
 			for (int y = 0; y < A[0].length; y++) {
 				if(y+1 == A[0].length){
@@ -27,9 +21,7 @@ public class GaussJordan {
 				}
 					A[x][y] = teclado.nextDouble();					
 				}
-			}*/
-		
-		
+			}
 		}
 	
 	public static void mostrarDatos(){
@@ -47,23 +39,19 @@ public class GaussJordan {
 		}
 	}
 	
-	
 	public static void dividir(){
 		for (int i = 0; i < A.length; i++) {
 			double pivote = 1/A[i][i];
-			
 			for (int j = 0; j < A[0].length; j++) {
 				A[i][j] = A[i][j] * pivote;
 			}
-			
-			cero(i); // i es igual a la fila
+			cero(i);
 		}
 	}
 	
 	public static void cero(int i){
 		mostrarDatos();
 		double[] no = new double[2];
-		
 		int r=0;
 		double dato = A[i][i];
 		for(int x = 0; x < A.length;x++){
@@ -83,23 +71,6 @@ public class GaussJordan {
 			}
 			n++;
 			}
-		}
-		
-		
+		}	
 	}
 }
-	/*
-	public static void GaussJordan(){
-		double val = 0.0;
-		for (int i = 0; i < A.length; i++) {
-			for (int j = 0; j < A[0].length; j++) {
-				if(i == 1){
-				val = 1/A[i][j];
-				}
-				A[i][j] = A[i][j] * val;
-			}
-		}
-	}
-	}
-	*/
-
