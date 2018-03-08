@@ -64,14 +64,14 @@ public class GaussJordan {
 		mostrarDatos();
 		double[] no = new double[2];
 		
-		int c1 = 0,r=0;
+		int r=0;
 		double dato = A[i][i];
 		for(int x = 0; x < A.length;x++){
-			if(dato != A[i][c1]){
-				no[r] = -(1)*(A[i][c1]);
+			if(dato != A[x][i]){
+				no[r] = -(1)*(A[x][i]);
 				r++;
 			}
-			c1++;
+			
 		}
 		
 		for (int n = 0, z = 0; z < A.length; z++) {
